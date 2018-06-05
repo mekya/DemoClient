@@ -1,0 +1,11 @@
+<div>
+	<div class="custom-file mb-1">
+		<input id="video_input" type="file" accept="video/*"
+			onChange="playFile(this.files[0])" class="custom-file-input">
+		<label class="custom-file-label">Choose	file...</label>
+	</div>
+
+	<button class="btn mb-1 w-50" id="camera" onClick="camera();">Camera</button><br>
+	<button class="btn mb-1 w-50" id="stop" onClick="stop();">Stop</button>
+	<div id="qrcode"></div>
+</div>

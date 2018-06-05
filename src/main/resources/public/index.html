@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Getting Started: Serving Web Content</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script>
+	$.get("/settings/server", function(data, status) {
+		server = data;
+		$("#serveraddress")[0].value=server;
+	});
+	function saveIp() {
+		var ip = $("#serveraddress")[0].value;
+		$.post("/settings/server", ip);
+	}
+</script>
+</head>
+<body>
+	<div class="main-content">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="card">
+						<h2 class="card-header">Ant Media Server Demos</h2>
+						<div class="card-body">
+							<ul>
+								<li><h2>
+										RTMP HLS <a href="/rtmp_hls.html">try</a>
+									</h2></li>
+								<li><h2>
+										RTMP WebRTC <a href="/rtmp_webrtc.html">try</a>
+									</h2></li>
+								<li><h2>
+										WebRTC HLS <a href="/webrtc_hls.html">try</a>
+									</h2></li>
+								<li><h2>
+										WebRTC WebRTC <a href="/webrtc_webrtc.html">try</a>
+									</h2></li>
+								<li><h2>
+										Social Media <a href="/rtmp_hls">try</a>
+									</h2></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="card">
+						<h2 class="card-header">Settings</h2>
+						<div class="card-body">
+							Server Address:
+							<div class="row">
+								<input id="serveraddress" type="text" value="">
+								<button type="button" onclick="saveIp()" class="btn btn-default">
+									<i class="fa fa-floppy-o"></i>
+    							</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+</body>
+</html>
